@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap');
+
+
+@layer components {
+   
+    .navbar-smaller {
+        @apply bg-lightBlue fixed top-0 left-1/3 right-0 bottom-0 flex-col items-center shadow-md justify-evenly 
+    }
+    .navitem-smaller {
+        @apply flex flex-col items-center
+    }
+    .toggle-nav {
+        @apply text-onHover absolute top-4 right-4 cursor-pointer z-50 block
+    }
+    .timeline-img {
+        @apply w-24 h-24 rounded-full object-cover mx-auto left-0 right-0 md:mx-0
+    }
+    .timeline-container {
+        @apply relative w-1/2 ml-auto pl-16 -top-28 md:w-full md:-top-24 md:pl-28
+    }
+    .timeline-ptr {
+        @apply w-4 h-4 rotate-45 absolute left-14 top-1/2 -translate-y-1/2 bg-lightBlue md:left-28
+    }
+    .timeline-container-left {
+        @apply ml-0 mr-auto pl-0 pr-16 md:pl-28
+    }
+    .timeline-ptr-left {
+        @apply left-auto right-14 md:right-auto md:left-28
+        
+    }
+    .tabs {
+        @apply  mx-auto md:w-full flex text-primary items-start md:flex-col  p-4
+    }
+    .tabs-nav {
+        @apply w-64 md:flex md:gap-2 md:w-full md:justify-evenly
+    }
+    .not-active-tab {
+        @apply p-2 tracking-wider text-lg cursor-pointer border-l-2 border-primary md:border-l-0 text-sm
+    }
+    .active-tab {
+        @apply p-2 tracking-wider text-lg border-l-2 border-onHover cursor-pointer md:border-l-0 md:border-b-2 text-sm
+    }
+  
+    .typing {
+        @apply text-primary mb-2 text-6xl block sm:text-3xl sm:font-semibold
+    }
+}
+
+body {
+    font-family: 'Sora', sans-serif;
+    overflow-x: hidden;
+    background-color:#293241;
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width:0.2rem;
+}
+
+::-webkit-scrollbar-track {
+    background-color:#293241;
+
+}
+
+::-webkit-scrollbar-thumb {
+    background-color:#ee6c4d;
+    border-radius: 100vw;
+}
+
+
