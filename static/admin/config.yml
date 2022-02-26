@@ -19,6 +19,7 @@ collections:
       - { name: slug, label: Slug, widget: string }
       - { name: date, label: Date, widget: datetime }
       - { name: body, label: Body, widget: markdown }
+      - { name: summary, label: Summary, widget: string}
       - { name: thumb, label: Upload Thumbnail, widget: image, required: false }
 
   - name: project
