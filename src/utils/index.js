@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react"
+import moment from 'moment';
+
 
 export const useOnScreen = ref => {
   const [isIntersecting, setIntersecting] = useState(false)
@@ -126,3 +128,8 @@ export const socialLinks = [
     url: "https://codepen.io/jawadvajeeh",
   },
 ]
+
+
+export const displayDate = date => {
+  return moment(date).format("MMMM Do YYYY");
+}
