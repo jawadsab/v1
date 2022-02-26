@@ -5,7 +5,7 @@ import { useTransition, animated } from "react-spring"
 import { useStaticQuery, graphql } from "gatsby"
 
 const Projects = () => {
-  const {allMarkdownRemark} = useStaticQuery(graphql`
+  const { allMarkdownRemark } = useStaticQuery(graphql`
     query MyProjects {
       allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/src/projects/" } }
@@ -26,7 +26,7 @@ const Projects = () => {
       }
     }
   `)
-  const {nodes} = allMarkdownRemark;
+  const { nodes } = allMarkdownRemark
 
   console.log(nodes)
   const ref = useRef()
@@ -50,34 +50,30 @@ const Projects = () => {
       )}
 
       <div className="grid grid-cols-3 gap-4 mt-4 md:grid-cols-2 sm:grid-cols-1">
-        {projects.map((project, index) => {
+        {nodes && nodes.map((project) => {
           return (
-            <a
-              href={project.live_site}
-              target="_blank"
-              rel="noreferrer"
-              className=" p-4 bg-lightBlue flex flex-col justify-start shadow-md rounded-md hover:-translate-y-2 transition-transform duration-300"
-            >
+            <div key={project.id} className=" p-4 bg-lightBlue flex flex-col justify-start shadow-md rounded-md hover:-translate-y-2 transition-transform duration-300">
               <div className="flex justify-between items-center text-onHover mb-4">
-                <a target="_blank" rel="noreferrer" href={project.source_code}>
+                <a target="_blank" rel="noreferrer" href={project.frontmatter.source_code}>
                   {" "}
                   <FiGithub fontSize={30} />
                 </a>
-                <a target="_blank" rel="noreferrer" href={project.live_site}>
+                <a target="_blank" rel="noreferrer" href={project.frontmatter.live_site}>
                   {" "}
                   <FiExternalLink fontSize={30} />
                 </a>
               </div>
               <h2 className="font-semibold text-secondary text-xl tracking-wider hover:text-onHover transition-colors duration-300">
-                {project.title}
+                {project.frontmatter.title}
               </h2>
-              <p className="text-primary font-semibold mt-4 mb-4 text-justify">
+              {/* <p className="text-primary font-semibold mt-4 mb-4 text-justify">
                 {project.project_description}
-              </p>
+              </p> */}
+              <div className="text-primary font-semibold mt-4 mb-4 text-justify" dangerouslySetInnerHTML={{__html:project.html}} />
               <p className="text-primary mt-2 text-sm mt-auto">
-                {project.tech_stack}
+                {project.frontmatter.stack}
               </p>
-            </a>
+            </div>
           )
         })}
       </div>
