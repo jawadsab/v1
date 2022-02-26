@@ -3,9 +3,9 @@ import React from "react"
 import { Layout } from "../../components"
 
 const Blogs = ({ data }) => {
-  const { allMarkdownRemark } = data
-  const { nodes } = allMarkdownRemark
-  console.log(nodes)
+  // const { allMarkdownRemark } = data
+  // const { nodes } = allMarkdownRemark
+  // console.log(nodes)
   return (
     <Layout>
       <div className="min-h-screen text-primary">
@@ -42,23 +42,23 @@ const Blogs = ({ data }) => {
 
 export default Blogs
 
-export const query = graphql`
-  query MyBlogs {
-    allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/src/blogs/" } }
-      sort: { fields: frontmatter___date, order: DESC }
-    ) {
-      nodes {
-        frontmatter {
-          date(fromNow: true)
-          title
-          slug
-          tags
-          summary
-        }
-        html
-        id
-      }
-    }
-  }
-`
+// export const query = graphql`
+//   query MyBlogs {
+//     allMarkdownRemark(
+//       filter: { fileAbsolutePath: { regex: "/src/blogs/" } }
+//       sort: { fields: frontmatter___date, order: DESC }
+//     ) {
+//       nodes {
+//         frontmatter {
+//           date(fromNow: true)
+//           title
+//           slug
+//           tags
+//           summary
+//         }
+//         html
+//         id
+//       }
+//     }
+//   }
+// `

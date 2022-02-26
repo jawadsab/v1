@@ -3,8 +3,8 @@ import { Layout } from "../components"
 import { graphql } from "gatsby"
 
 const BlogTemplate = ({data}) => {
-  const {html} = data.markdownRemark;
-  const {title,tags,date} = data.markdownRemark.frontmatter
+  // const {html} = data.markdownRemark;
+  // const {title,tags,date} = data.markdownRemark.frontmatter
   return (
     <div>
       <Layout>
@@ -20,15 +20,15 @@ const BlogTemplate = ({data}) => {
 
 export default BlogTemplate
 
-export const query = graphql`
-  query BlogsPage($slug: String) {
-    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
-      html
-      frontmatter {
-        date(fromNow: false)
-        tags
-        title
-      }
-    }
-  }
-`
+// export const query = graphql`
+//   query BlogsPage($slug: String) {
+//     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
+//       html
+//       frontmatter {
+//         date(fromNow: false)
+//         tags
+//         title
+//       }
+//     }
+//   }
+// `
