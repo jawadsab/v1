@@ -5,25 +5,30 @@ import { useTransition, animated } from "react-spring"
 import { useStaticQuery, graphql } from "gatsby"
 
 const Projects = () => {
-  // const data = useStaticQuery(graphql`
-  //   query MyProjects {
-  //     allMarkdownRemark  {
-  //       nodes {
-  //         id
-  //         frontmatter {
-  //           date
-  //           stack
-  //           title
-  //           live_site
-  //           source_code
-  //         }
-  //         html
-  //       }
-  //     }
-  //   }
-  // `)
+  const {allMarkdownRemark} = useStaticQuery(graphql`
+    query MyProjects {
+      allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/src/projects/" } }
+        sort: { fields: frontmatter___date, order: DESC }
+      ) {
+        nodes {
+          frontmatter {
+            date(fromNow: true)
+            featured
+            live_site
+            source_code
+            stack
+            title
+          }
+          html
+          id
+        }
+      }
+    }
+  `)
+  const {nodes} = allMarkdownRemark;
 
-  // console.log(data)
+  console.log(nodes)
   const ref = useRef()
   const isVisible = useOnScreen(ref)
   const transition = useTransition(isVisible, {
