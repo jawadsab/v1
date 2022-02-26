@@ -6,7 +6,7 @@ import { displayDate } from "../../utils"
 const Blogs = ({ data }) => {
   const { allMarkdownRemark } = data
   const { nodes } = allMarkdownRemark
-  console.log(nodes)
+  
   return (
     <Layout>
       <div className="min-h-screen text-primary">

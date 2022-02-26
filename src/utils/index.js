@@ -1,15 +1,13 @@
 import { useState, useEffect } from "react"
-import moment from 'moment';
-
+import moment from "moment"
 
 export const useOnScreen = ref => {
   const [isIntersecting, setIntersecting] = useState(false)
 
-  const observer = new IntersectionObserver(([entry]) =>
-    setIntersecting(entry.isIntersecting)
-  )
-
   useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) =>
+      setIntersecting(entry.isIntersecting)
+    )
     observer.observe(ref.current)
     // Remove the observer as soon as the component is unmounted
     return () => {
@@ -129,7 +127,6 @@ export const socialLinks = [
   },
 ]
 
-
 export const displayDate = date => {
-  return moment(date).format("MMMM Do YYYY");
+  return moment(date).format("MMMM Do YYYY")
 }
