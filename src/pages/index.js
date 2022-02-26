@@ -3,11 +3,9 @@ import {
   Layout,
   Hero,
   About,
-  Education,
   Experience,
   Projects,
   Contact,
-  Resume,
 } from "../components"
 
 export default function Home() {
@@ -17,7 +15,6 @@ export default function Home() {
         <div className="min-h-screen">
           <Hero />
           <About />
-          {/* <Education /> */}
           <Experience />
           <Projects />
           <Contact />

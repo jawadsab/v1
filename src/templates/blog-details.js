@@ -1,27 +1,33 @@
 import React from "react"
 import { Layout } from "../components"
 import { graphql } from "gatsby"
-import {displayDate} from "../utils";
+import { displayDate } from "../utils"
 
 const BlogTemplate = ({ data }) => {
   const { html } = data.markdownRemark
   const { title, tags, date } = data.markdownRemark.frontmatter
-  console.log(data.markdownRemark.frontmatter);
-  
+
   return (
     <div>
       <Layout>
         <div className="text-primary min-h-max p-2">
-          <h1 className="text-center text-4xl text-secondary capitalize mb-4">
+          <h1 className="text-left text-4xl md:text-3xl text-secondary capitalize mb-4">
             {title}
           </h1>
           <p className="text-left mb-4">{displayDate(date)}</p>
-         
-          <div dangerouslySetInnerHTML={{__html:html}} />
 
-          {
-            tags.split(",").map((tag,index) => <div key={index} className="mt-4 flex items-center"><span>{tag}</span></div>)
-          }
+          <div dangerouslySetInnerHTML={{ __html: html }} />
+
+          <div className="mt-8 flex items-center gap-4">
+            {tags.split(",").map((tag, index) => (
+              <span
+                className="text-secondary bg-onHover p-2 rounded-md cursor-pointer hover:-translate-y-2 transition-transform duration-300"
+                key={index}
+              >
+                #{tag}
+              </span>
+            ))}
+          </div>
         </div>
       </Layout>
     </div>
@@ -40,13 +46,6 @@ export const query = graphql`
         summary
         tags
         title
-        thumb {
-          childImageSharp {
-            fluid {
-              src
-            }
-          }
-        }
       }
     }
   }

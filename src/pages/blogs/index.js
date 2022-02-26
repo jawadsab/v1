@@ -49,13 +49,7 @@ export const query = graphql`
           slug
           summary
           tags
-          thumb {
-            childImageSharp {
-              fluid {
-                src
-              }
-            }
-          }
+         
         }
         html
         id

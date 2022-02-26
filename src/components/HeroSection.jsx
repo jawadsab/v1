@@ -4,7 +4,7 @@ import { animated, useTransition } from "react-spring"
 const HeroSection = () => {
   const [mounted, setIsMounted] = useState(false)
   useEffect(() => {
-    console.log("Yesssssssss")
+   
     setIsMounted(true)
   }, [])
   const transitions = useTransition(mounted, {

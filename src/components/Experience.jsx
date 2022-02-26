@@ -3,13 +3,13 @@ import { jobs } from "../utils"
 import { useTransition, animated } from "react-spring"
 
 const TabItem = ({ id, company, activeTab, setActiveTab }) => {
-  const handleClick = e => {
+  const handleClick = () => {
     setActiveTab(id)
   }
   return (
     <li
       className={activeTab === id ? "active-tab" : "not-active-tab"}
-      onClick={handleClick}
+      onClick={e => handleClick()}
     >
       {company}
     </li>

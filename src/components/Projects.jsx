@@ -1,6 +1,6 @@
 import React, { useRef } from "react"
 import { FiGithub, FiExternalLink } from "react-icons/fi"
-import { projects, useOnScreen } from "../utils"
+import { useOnScreen } from "../utils"
 import { useTransition, animated } from "react-spring"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -28,7 +28,6 @@ const Projects = () => {
   `)
   const { nodes } = allMarkdownRemark
 
-  console.log(nodes)
   const ref = useRef()
   const isVisible = useOnScreen(ref)
   const transition = useTransition(isVisible, {
