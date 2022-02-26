@@ -2,8 +2,28 @@ import React, { useRef } from "react"
 import { FiGithub, FiExternalLink } from "react-icons/fi"
 import { projects, useOnScreen } from "../utils"
 import { useTransition, animated } from "react-spring"
+import { useStaticQuery, graphql } from "gatsby"
 
 const Projects = () => {
+  // const data = useStaticQuery(graphql`
+  //   query MyProjects {
+  //     allMarkdownRemark  {
+  //       nodes {
+  //         id
+  //         frontmatter {
+  //           date
+  //           stack
+  //           title
+  //           live_site
+  //           source_code
+  //         }
+  //         html
+  //       }
+  //     }
+  //   }
+  // `)
+
+  // console.log(data)
   const ref = useRef()
   const isVisible = useOnScreen(ref)
   const transition = useTransition(isVisible, {

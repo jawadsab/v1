@@ -1,0 +1,38 @@
+backend:
+  name: github
+  repo: jawadsab/v1
+  branch: master
+
+media_folder: static/assets
+public_folder: /assets
+
+collections:
+  - name: blog
+    label: Blog
+    folder: src/blogs
+    media_folder: "../images"
+    public_folder: "../images"
+    create: true
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: tags, label: Tags, widget: string }
+      - { name: slug, label: Slug, widget: string }
+      - { name: date, label: Date, widget: datetime }
+      - { name: body, label: Body, widget: markdown }
+      - { name: thumb, label: Upload Thumbnail, widget: image, required: false }
+
+  - name: project
+    label: Project
+    folder: src/projects
+    media_folder: "../images"
+    public_folder: "../images"
+    create: true
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: source_code, label: Sorce Link, widget: string }
+      - { name: live_site, label: Live Site, widget: string }
+      - { name: stack, label: Stack, widget: string }
+      - { name: date, label: Date, widget: datetime }
+      - { name: body, label: Body, widget: markdown }
+      - { name: thumb, label: Upload Thumbnail, widget: image, required: false }
+      - { name: featured, label: Featured?, widget: boolean, default: false }
