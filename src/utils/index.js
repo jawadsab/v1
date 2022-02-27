@@ -39,7 +39,7 @@ export const jobs = [
     locaion: "Remote",
     bullets: [
       "Converted Adobe wireframes into pixel perfect User Interface using ReactJs - 5+ pages",
-      "Collaboarte in designing and improving the product by resolving bugs",
+      "Collaborate in designing and improving the product by resolving bugs",
     ],
   },
 ]
@@ -115,7 +115,7 @@ export const socialLinks = [
   { name: "Github", url: "https://github.com/jawadsab" },
   {
     name: "LinkedIn",
-    url: "https://github.com/jawadsab",
+    url: "https://www.linkedin.com/in/jawadvajeeh/",
   },
   {
     name: "Twitter",
