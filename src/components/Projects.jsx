@@ -43,7 +43,7 @@ const Projects = () => {
               style={style}
               className="text-3xl text-secondary font-semibold"
             >
-              <span className="text-onHover">04.</span> Things I've build
+              <span className="text-onHover">03.</span> Things I've build
             </animated.header>
           )
       )}

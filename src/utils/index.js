@@ -39,7 +39,7 @@ export const jobs = [
     locaion: "Remote",
     bullets: [
       "Converted Adobe wireframes into pixel perfect User Interface using ReactJs - 5+ pages",
-      "Collboarte in designing and improving the product bu resolving bugs",
+      "Collaboarte in designing and improving the product by resolving bugs",
     ],
   },
 ]

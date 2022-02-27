@@ -39,7 +39,7 @@ const Experience = () => {
   return (
     <section id="jobs" className="min-h-screen p-2">
       <header className="text-3xl text-secondary font-semibold mb-4">
-        <span className="text-onHover">03.</span> Where I've worked
+        <span className="text-onHover">02.</span> Where I've worked
       </header>
       <div className="tabs">
         <ul className="tabs-nav">
