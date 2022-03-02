@@ -1,14 +1,19 @@
 const meta = {
     siteTitle: "Jawad Vajeeh - Web Engineer",
-    siteDescription: "Mohammed Abdul Jawad Vajeeh - Passionate Developer specializing in Javascript",
+    siteDescription: "Mohammed Abdul Jawad Vajeeh - Passionate Developer specializing in Javascript. Loves to code. Strong in Data Structures and Algorithms.",
     siteTitleAlt: "Jawad Vajeeh",
     siteShortName: "Jawad Vajeeh",
-    siteUrl:"http://localhost:8000",
-    siteLogo:"src/static/favicon.ico"
+    siteUrl:"https://www.jawadvajeeh.com/",
+    siteLogo:"/favicon.ico",
+    siteBanner:"/favicon.ico"
+}
+const socials = {
+    twitter:"@JVajeeh"
 }
 
 const website = {
-    ...meta
+    ...meta,
+    ...socials
   };
   
   module.exports = website;

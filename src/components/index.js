@@ -6,3 +6,4 @@ export {default as Experience} from "./Experience.jsx";
 export {default as Projects} from "./Projects.jsx";
 export {default as Contact} from "./Contact.jsx";
 export {default as Resume} from "./Resume.jsx";
+export {default as Seo} from "./Seo.jsx";

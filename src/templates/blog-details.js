@@ -1,15 +1,16 @@
 import React from "react"
-import { Layout } from "../components"
+import { Layout,Seo } from "../components"
 import { graphql } from "gatsby"
 import { displayDate } from "../utils"
 
 const BlogTemplate = ({ data }) => {
   const { html } = data.markdownRemark
-  const { title, tags, date } = data.markdownRemark.frontmatter
+  const { title, tags, date,summary,slug } = data.markdownRemark.frontmatter
 
   return (
     <div>
       <Layout>
+        <Seo title={title} isBlogPost={true} description={summary} slug={`/blogs/${slug}`} />
         <div className="text-primary min-h-max p-2">
           <h1 className="text-left text-4xl md:text-3xl text-secondary capitalize mb-4">
             {title}

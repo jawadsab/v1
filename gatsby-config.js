@@ -12,6 +12,8 @@ module.exports = {
     description: config.siteDescription,
     siteUrl: config.siteUrl,
     siteLogo: config.siteLogo,
+    banner: config.siteBanner,
+    twitter: config.twitter
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

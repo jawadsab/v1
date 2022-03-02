@@ -1,6 +1,6 @@
 import { graphql, Link } from "gatsby"
 import React from "react"
-import { Layout } from "../../components"
+import { Layout,Seo } from "../../components"
 import { displayDate } from "../../utils"
 
 const Blogs = ({ data }) => {
@@ -9,6 +9,7 @@ const Blogs = ({ data }) => {
   
   return (
     <Layout>
+      <Seo title="Blogs | Jawad Vajeeh" slug="/blogs"/>
       <div className="min-h-screen text-primary">
         <div className="text-primary flex flex-col gap-4">
           {nodes &&
